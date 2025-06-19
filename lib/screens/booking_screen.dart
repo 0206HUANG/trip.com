@@ -274,44 +274,51 @@ class _BookingScreenState extends State<BookingScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text('Travelers'),
-                        Row(
-                          children: [
-                            IconButton(
-                              onPressed: _numberOfPeople > 1
-                                  ? () {
-                                      setState(() {
-                                        _numberOfPeople--;
-                                      });
-                                    }
-                                  : null,
-                              icon: const Icon(Icons.remove),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 16,
-                                vertical: 8,
+                        const Expanded(
+                          flex: 1,
+                          child: Text('Travelers'),
+                        ),
+                        Flexible(
+                          flex: 1,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              IconButton(
+                                onPressed: _numberOfPeople > 1
+                                    ? () {
+                                        setState(() {
+                                          _numberOfPeople--;
+                                        });
+                                      }
+                                    : null,
+                                icon: const Icon(Icons.remove),
                               ),
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(4),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                  vertical: 6,
+                                ),
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(4),
+                                ),
+                                child: Text(
+                                  '$_numberOfPeople',
+                                  style: Theme.of(context).textTheme.titleMedium,
+                                ),
                               ),
-                              child: Text(
-                                '$_numberOfPeople',
-                                style: Theme.of(context).textTheme.titleMedium,
+                              IconButton(
+                                onPressed: _numberOfPeople < 10
+                                    ? () {
+                                        setState(() {
+                                          _numberOfPeople++;
+                                        });
+                                      }
+                                    : null,
+                                icon: const Icon(Icons.add),
                               ),
-                            ),
-                            IconButton(
-                              onPressed: _numberOfPeople < 10
-                                  ? () {
-                                      setState(() {
-                                        _numberOfPeople++;
-                                      });
-                                    }
-                                  : null,
-                              icon: const Icon(Icons.add),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ],
                     ),
