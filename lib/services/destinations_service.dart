@@ -1,0 +1,126 @@
+import '../models/destination.dart';
+
+class DestinationsService {
+  // Mock data for destinations
+  Future<List<Destination>> getDestinations() async {
+    // Simulate network delay
+    await Future.delayed(const Duration(milliseconds: 1000));
+    
+    return [
+      const Destination(
+        id: '1',
+        name: 'Paris, France',
+        description: 'The City of Light awaits with its iconic Eiffel Tower, world-class museums, and romantic ambiance. Experience the charm of Parisian cafes, stroll along the Seine, and immerse yourself in art and culture.',
+        images: [
+          'https://images.unsplash.com/photo-1502602898536-47ad22581b52?w=800',
+          'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?w=800',
+          'https://images.unsplash.com/photo-1549144511-f099e773c147?w=800',
+        ],
+        rating: 4.8,
+        reviewCount: 1250,
+        location: 'Paris, France',
+        latitude: 48.8566,
+        longitude: 2.3522,
+        price: 899.00,
+        currency: 'USD',
+        highlights: ['Eiffel Tower', 'Louvre Museum', 'Notre-Dame Cathedral', 'Champs-Élysées'],
+        category: 'Cultural',
+      ),
+      const Destination(
+        id: '2',
+        name: 'Tokyo, Japan',
+        description: 'Experience the perfect blend of traditional and modern in Japan\'s capital. From ancient temples to futuristic skyscrapers, Tokyo offers unforgettable experiences.',
+        images: [
+          'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800',
+          'https://images.unsplash.com/photo-1513407030348-c983a97b98d8?w=800',
+          'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=800',
+        ],
+        rating: 4.9,
+        reviewCount: 2100,
+        location: 'Tokyo, Japan',
+        latitude: 35.6762,
+        longitude: 139.6503,
+        price: 1299.00,
+        currency: 'USD',
+        highlights: ['Shibuya Crossing', 'Senso-ji Temple', 'Tokyo Skytree', 'Tsukiji Market'],
+        category: 'Cultural',
+      ),
+      const Destination(
+        id: '3',
+        name: 'Santorini, Greece',
+        description: 'Discover the stunning beauty of this Greek island with its white-washed buildings, blue-domed churches, and breathtaking sunsets over the Aegean Sea.',
+        images: [
+          'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800',
+          'https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800',
+          'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=800',
+        ],
+        rating: 4.7,
+        reviewCount: 890,
+        location: 'Santorini, Greece',
+        latitude: 36.3932,
+        longitude: 25.4615,
+        price: 699.00,
+        currency: 'USD',
+        highlights: ['Oia Village', 'Red Beach', 'Akrotiri Archaeological Site', 'Wine Tasting'],
+        category: 'Beach',
+      ),
+      const Destination(
+        id: '4',
+        name: 'New York City, USA',
+        description: 'The city that never sleeps offers iconic landmarks, world-class shows, diverse neighborhoods, and unparalleled energy that captivates visitors from around the globe.',
+        images: [
+          'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800',
+          'https://images.unsplash.com/photo-1518391846015-55a9cc003b25?w=800',
+          'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=800',
+        ],
+        rating: 4.6,
+        reviewCount: 3200,
+        location: 'New York City, USA',
+        latitude: 40.7128,
+        longitude: -74.0060,
+        price: 799.00,
+        currency: 'USD',
+        highlights: ['Statue of Liberty', 'Central Park', 'Times Square', 'Broadway Shows'],
+        category: 'Urban',
+      ),
+      const Destination(
+        id: '5',
+        name: 'Bali, Indonesia',
+        description: 'Experience tropical paradise with stunning beaches, ancient temples, lush rice terraces, and a rich cultural heritage that makes Bali truly magical.',
+        images: [
+          'https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=800',
+          'https://images.unsplash.com/photo-1588401508841-e0d6b52e12e9?w=800',
+          'https://images.unsplash.com/photo-1555400082-b1d15ea47cd0?w=800',
+        ],
+        rating: 4.8,
+        reviewCount: 1890,
+        location: 'Bali, Indonesia',
+        latitude: -8.3405,
+        longitude: 115.0920,
+        price: 599.00,
+        currency: 'USD',
+        highlights: ['Tanah Lot Temple', 'Ubud Rice Terraces', 'Kuta Beach', 'Mount Batur'],
+        category: 'Beach',
+      ),
+      const Destination(
+        id: '6',
+        name: 'Swiss Alps, Switzerland',
+        description: 'Discover breathtaking mountain landscapes, pristine lakes, charming villages, and world-class skiing in one of Europe\'s most beautiful regions.',
+        images: [
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+          'https://images.unsplash.com/photo-1527004760525-be6ad93e5b60?w=800',
+          'https://images.unsplash.com/photo-1548016556-2f66b3cf1020?w=800',
+        ],
+        rating: 4.9,
+        reviewCount: 756,
+        location: 'Swiss Alps, Switzerland',
+        latitude: 46.5197,
+        longitude: 7.9969,
+        price: 1199.00,
+        currency: 'USD',
+        highlights: ['Matterhorn', 'Jungfraujoch', 'Lake Geneva', 'Zermatt Village'],
+        category: 'Adventure',
+      ),
+    ];
+  }
+} 
