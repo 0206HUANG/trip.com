@@ -85,7 +85,7 @@ class _MapScreenState extends State<MapScreen> {
                           itemBuilder: (context, index) {
                             final destination = destinations[index];
                             return Container(
-                              width: 280,
+                              width: MediaQuery.of(context).size.width * 0.7,
                               margin: const EdgeInsets.only(right: 12),
                               child: Card(
                                 child: InkWell(
@@ -107,9 +107,17 @@ class _MapScreenState extends State<MapScreen> {
                                           borderRadius: BorderRadius.circular(8),
                                           child: Image.network(
                                             destination.images.first,
-                                            width: 60,
-                                            height: 60,
+                                            width: 50,
+                                            height: 50,
                                             fit: BoxFit.cover,
+                                            errorBuilder: (context, error, stackTrace) {
+                                              return Container(
+                                                width: 50,
+                                                height: 50,
+                                                color: Colors.grey[300],
+                                                child: const Icon(Icons.image_not_supported),
+                                              );
+                                            },
                                           ),
                                         ),
                                         const SizedBox(width: 12),
@@ -120,26 +128,29 @@ class _MapScreenState extends State<MapScreen> {
                                             children: [
                                               Text(
                                                 destination.name,
-                                                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                                                style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                                 maxLines: 1,
                                                 overflow: TextOverflow.ellipsis,
                                               ),
-                                              const SizedBox(height: 4),
+                                              const SizedBox(height: 2),
                                               Text(
                                                 destination.location,
                                                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                                   color: Colors.grey[600],
                                                 ),
+                                                maxLines: 1,
+                                                overflow: TextOverflow.ellipsis,
                                               ),
-                                              const SizedBox(height: 4),
+                                              const SizedBox(height: 2),
                                               Text(
-                                                '${destination.currency} ${destination.price}',
-                                                style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                                                '${destination.currency} ${destination.price.toStringAsFixed(0)}',
+                                                style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                                   color: Theme.of(context).primaryColor,
                                                   fontWeight: FontWeight.bold,
                                                 ),
+                                                overflow: TextOverflow.ellipsis,
                                               ),
                                             ],
                                           ),
